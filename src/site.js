@@ -1,10 +1,11 @@
 require('./stylesheets/base.scss');
-require('./images/logo.png');
-require('./images/tech-radar-201611-landing-page-wide.png');
-require('./images/tw-logo.png');
-require('./images/favicon.ico');
-require('./images/radar_legend.png');
+const d3 = require('d3');
+const factory = require('./util/factory');
 
-const GoogleSheetInput = require('./util/factory');
-
-GoogleSheetInput().build();
+d3.selectAll('.radar').each(function () {
+	var radarElement = d3.select(this);
+	// Pick and parse JSON data from page post data.
+	var data = JSON.parse(radarElement.select('pre').html());
+	// Build the radar!
+	factory.RadarBuilder(data, radarElement.attr("id")).build();
+});
