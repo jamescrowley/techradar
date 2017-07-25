@@ -1,9 +1,16 @@
-const Quadrant = function (name) {
+const Quadrant = function (id, name, order) {
   var self, blips;
 
   self = {};
   blips = [];
 
+  self.order = order;
+  self.startAngle = 0;
+
+  self.id = function () {
+    return id;
+  };
+  
   self.name = function () {
     return name;
   };

@@ -1,0 +1,230 @@
+---
+rings:
+- Future
+- Evaluate
+- Adopt
+- Continue
+- Hold
+- Remove
+quadrants:
+- id: officeit
+  name: Office IT
+  color: first
+  blips:
+  - name: Goto Meeting
+    ring: Hold
+  - name: Zoom Meetings
+    ring: Continue
+  - name: ZenDesk
+    ring: Continue
+  - name: Windows 10
+    ring: Continue
+  - name: Mac OS 10
+    ring: Continue
+  - name: GSuite
+    ring: Continue
+  - name: Office 365
+    ring: Continue
+  - name: Slack
+    ring: Continue
+  - name: OfficeVibe
+    ring: Continue
+  - name: Trello
+    ring: Continue
+    description: Some blurb about Trello and why
+  - name: Learnerbly
+    ring: Evaluate
+    isNew: true
+    description: Some blurb about learnerbly and why
+- id: platform
+  name: Platform
+  color: second
+  blips:
+  - name: SQL Server 2014
+    ring: Remove
+  - name: MySQL (Amazon RDS)
+    ring: Hold
+  - name: RabbitMQ
+    ring: Hold
+  - name: Amazon SQS
+    ring: Evaluate
+  - name: Amazon Lambda
+    ring: Continue
+  - name: Amazon EC2
+    ring: Continue
+  - name: SQL Server 2016
+    ring: Adopt
+  - name: SQL Server 2016 (Amazon RDS)
+    ring: Future
+  - name: HAProxy
+    ring: Continue
+  - name: Amazon ELB
+    ring: Continue
+  - name: Apex
+    ring: Continue
+  - name: Postgresql (Amazon RDS)
+    ring: Continue
+  - name: Amazon ALB
+    ring: Adopt
+  - name: Amazon Aurora
+    ring: Evaluate
+  - name: ZeroMQ
+    ring: Future
+  - name: Vault
+    ring: Evaluate
+  - name: Docker (dev)
+    ring: Evaluate
+  - name: Hashicorp Nomad
+    ring: Future
+  - name: Docker (prod)
+    ring: Future
+  - name: Amazon API Gateway
+    ring: Continue
+    isNew: true
+  - name: Amazon Dynamo
+    ring: Hold
+- id: devops
+  name: DevOps
+  color: third
+  blips:
+  - name: ZipKin
+    ring: Future
+    isNew: true
+  - name: Amazon X-Ray
+    ring: Future
+    isNew: true
+  - name: PagerDuty
+    ring: Continue
+    isNew: true
+  - name: NewRelic APM
+    ring: Future
+  - name: Octopus Deploy
+    ring: Hold
+  - name: NewRelic Infrastructure
+    ring: Evaluate
+    isNew: true
+  - name: NewRelic Servers
+    ring: Remove
+  - name: TeamCity
+    ring: Continue
+  - name: Amazon CodeDeploy
+    ring: Continue
+  - name: Hashicorp Packer
+    ring: Continue
+  - name: Hashicorp Terraform
+    ring: Continue
+  - name: AlertLogic Threat Manager
+    ring: Continue
+  - name: AlertLogic Cloud Insight
+    ring: Continue
+  - name: AlertLogic Active Log Watch
+    ring: Continue
+  - name: Amazon Inspector
+    ring: Adopt
+  - name: Sentry
+    ring: Continue
+  - name: SumoLogic
+    ring: Continue
+  - name: Grafana
+    ring: Adopt
+  - name: Hashicorp Consul
+    ring: Adopt
+  - name: Hashicorp Vault
+    ring: Evaluate
+- id: dotnet
+  color: fourth
+  name: ".NET Stack"
+  blips:
+  - name: FAKE
+    ring: Continue
+    isNew: true
+  - name: Entity Framework
+    ring: Continue
+    isNew: true
+  - name: Dapper
+    ring: Continue
+    isNew: true
+  - name: Paket
+    ring: Continue
+    isNew: true
+  - name: NUnit
+    ring: Continue
+    isNew: true
+  - name: ORMLite
+    ring: Remove
+    isNew: true
+  - name: SpecFlow / Cucumber
+    ring: Continue
+    isNew: true
+  - name: NodaTime
+    ring: Continue
+    isNew: true
+  - name: NLog
+    ring: Continue
+    isNew: true
+  - name: DbUp
+    ring: Continue
+    isNew: true
+  - name: AutoFixture
+    ring: Continue
+    isNew: true
+  - name: XUnit
+    ring: Continue
+    isNew: true
+  - name: MSpec
+    ring: Hold
+    isNew: true
+  - name: ".NET Core 2.0"
+    ring: Future
+    isNew: true
+  - name: ".NET Standard 2.0"
+    ring: Evaluate
+    isNew: true
+  - name: ".NET 4.6.2"
+    ring: Continue
+- id: ui
+  color: fourth
+  name: UI Stack
+  blips:
+  - name: AngularJS
+    ring: Hold
+    isNew: true
+  - name: Nancy
+    ring: Hold
+    isNew: true
+  - name: NPM
+    ring: Hold
+    isNew: true
+  - name: Gulp
+    ring: Hold
+  - name: jQuery
+    ring: Hold
+  - name: Webpack
+    ring: Adopt
+  - name: React
+    ring: Adopt
+  - name: Yarn
+    ring: Adopt
+  - name: Flow
+    ring: Adopt
+  - name: Jest
+    ring: Adopt
+    isNew: true
+  - name: Enzyme
+    ring: Adopt
+    isNew: true
+- id: golang
+  color: first
+  name: Go Stack
+  blips:
+  - name: Amazon Lambda (Golang w/ Apex)
+    ring: Continue
+    description: Some description info
+  - name: Golang
+    ring: Continue
+  - name: Amazon SQS
+    ring: Continue
+  - name: Amazon Lambda (JS)
+    ring: Hold
+  - name: Amazon Dynamo
+    ring: Hold

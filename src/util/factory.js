@@ -7,7 +7,6 @@ const _ = {
     each: require('lodash/each')
 };
 
-const InputSanitizer = require('./inputSanitizer');
 const Radar = require('../models/radar');
 const Quadrant = require('../models/quadrant');
 const Ring = require('../models/ring');
@@ -18,18 +17,15 @@ const ContentValidator = require('./contentValidator');
 const Sheet = require('./sheet');
 const ExceptionMessages = require('./exceptionMessages');
 
-const RadarBuilder = function (blips, radarElement) {
+const RadarBuilder = function (radarDefinition, radarElement) {
     var self = {};
 
     self.build = function() {
 
-        blips = _.map(blips, new InputSanitizer().sanitize);
-
-        var rings = _.map(_.uniqBy(blips, 'ring'), 'ring');
         var ringMap = {};
         var maxRings = 6;
 
-        _.each(rings, function (ringName, i) {
+        _.each(radarDefinition.rings, function (ringName, i) {
             if (i == maxRings) {
                 throw new MalformedDataError(ExceptionMessages.TOO_MANY_RINGS);
             }
@@ -37,11 +33,12 @@ const RadarBuilder = function (blips, radarElement) {
         });
 
         var quadrants = {};
-        _.each(blips, function (blip) {
-            if (!quadrants[blip.quadrant]) {
-                quadrants[blip.quadrant] = new Quadrant(blip.quadrant);
-            }
-            quadrants[blip.quadrant].add(new Blip(blip.name, ringMap[blip.ring], blip.isNew.toLowerCase() === 'true', blip.topic, blip.description))
+
+        _.each(radarDefinition.quadrants, function (quadrant) {
+            quadrants[quadrant.id] = new Quadrant(quadrant.id, quadrant.name, quadrant.color);
+            _.each(quadrant.blips, function(blip) {
+                quadrants[quadrant.id].add(new Blip(blip.name, ringMap[blip.ring], blip.isNew, blip.topic, blip.description))
+            });
         });
 
         var radar = new Radar(radarElement);
@@ -49,7 +46,7 @@ const RadarBuilder = function (blips, radarElement) {
             radar.addQuadrant(quadrant)
         });
 
-        var size = (window.innerHeight - 133) < 620 ? 620 : window.innerHeight - 133;
+        var size = (window.innerHeight - 250) < 620 ? 620 : window.innerHeight - 250;
 
         new GraphingRadar(size, radar).init(radarElement).plot();
     }

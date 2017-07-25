@@ -5,6 +5,7 @@ const path = require('path');
 const buildPath = path.join(__dirname, './dist');
 const args = require('yargs').argv;
 
+const CnameWebpackPlugin = require('cname-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -25,6 +26,9 @@ let plugins = [
         template: './src/index.html',
         inject: 'body',
         chunks: 'app'
+    }),
+    new CnameWebpackPlugin({
+        domain: 'techradar.fundapps.io',
     })
 ];
 
@@ -60,6 +64,7 @@ module.exports = {
     module: {
         loaders: [
             { test: /\.json$/, loader: 'json'},
+            { test: /\.yml$/, loaders: ['json','yaml']},
             { test: /\.js$/, exclude: /node_modules/, loader: 'babel'},
             { test: /\.scss$/, exclude: /node_modules/, loader: ExtractTextPlugin.extract('style', 'css?sourceMap!sass') },
             { test: /\.(png|jpg|ico)$/, exclude: /node_modules/, loader: 'file-loader?name=images/[name].[ext]&context=./src/images' }
