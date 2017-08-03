@@ -7,35 +7,6 @@ rings:
 - Hold
 - Remove
 quadrants:
-- id: officeit
-  name: Office IT
-  color: first
-  blips:
-  - name: Goto Meeting
-    ring: Hold
-  - name: Zoom Meetings
-    ring: Continue
-  - name: ZenDesk
-    ring: Continue
-  - name: Windows 10
-    ring: Continue
-  - name: Mac OS 10
-    ring: Continue
-  - name: GSuite
-    ring: Continue
-  - name: Office 365
-    ring: Continue
-  - name: Slack
-    ring: Continue
-  - name: OfficeVibe
-    ring: Continue
-  - name: Trello
-    ring: Continue
-    description: Some blurb about Trello and why
-  - name: Learnerbly
-    ring: Evaluate
-    isNew: true
-    description: Some blurb about learnerbly and why
 - id: platform
   name: Platform
   color: second
@@ -228,3 +199,32 @@ quadrants:
     ring: Hold
   - name: Amazon Dynamo
     ring: Hold
+- id: officeit
+  name: Office IT
+  color: first
+  blips:
+  - name: Goto Meeting
+    ring: Hold
+  - name: Zoom Meetings
+    ring: Continue
+  - name: ZenDesk
+    ring: Continue
+  - name: Windows 10
+    ring: Continue
+  - name: Mac OS 10
+    ring: Continue
+  - name: GSuite
+    ring: Continue
+  - name: Office 365
+    ring: Continue
+  - name: Slack
+    ring: Continue
+  - name: OfficeVibe
+    ring: Continue
+  - name: Trello
+    ring: Continue
+    description: Some blurb about Trello and why
+  - name: Learnerbly
+    ring: Evaluate
+    isNew: true
+    description: Some blurb about learnerbly and why
