@@ -190,7 +190,6 @@ quadrants:
   blips:
   - name: Amazon Lambda (Golang w/ Apex)
     ring: Continue
-    description: Some description info
   - name: Golang
     ring: Continue
   - name: Amazon SQS
@@ -223,8 +222,7 @@ quadrants:
     ring: Continue
   - name: Trello
     ring: Continue
-    description: Some blurb about Trello and why
   - name: Learnerbly
     ring: Evaluate
     isNew: true
-    description: Some blurb about learnerbly and why
+    description: Interesting new tool for tracking learning
