@@ -63,17 +63,17 @@ module.exports = {
 
     module: {
         loaders: [
-            { test: /\.json$/, loader: 'json'},
-            { test: /\.yml$/, loaders: ['json','yaml']},
-            { test: /\.js$/, exclude: /node_modules/, loader: 'babel'},
-            { test: /\.scss$/, exclude: /node_modules/, loader: ExtractTextPlugin.extract('style', 'css?sourceMap!sass') },
+            { test: /\.json$/, loader: 'json-loader'},
+            { test: /\.yml$/, loaders: ['json-loader','yaml-loader']},
+            { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},
+            { test: /\.scss$/, exclude: /node_modules/, loader: ExtractTextPlugin.extract({
+                fallback: "style-loader",
+                use: "css-loader?sourceMap!sass-loader"
+              }) },
             { test: /\.(png|jpg|ico)$/, exclude: /node_modules/, loader: 'file-loader?name=images/[name].[ext]&context=./src/images' }
         ]
     },
-
-    quiet: false,
-    noInfo: false,
-
+  
     plugins: plugins,
 
     devtool: devtool,
@@ -81,7 +81,9 @@ module.exports = {
     devServer: {
         contentBase: buildPath,
         host: '0.0.0.0',
-        port: 8080
+        port: 8080,
+        quiet: false,
+        noInfo: false,
     }
 };
 
