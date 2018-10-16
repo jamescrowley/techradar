@@ -157,33 +157,63 @@ quadrants:
   color: fourth
   name: UI Stack
   blips:
-  - name: AngularJS
-    ring: Hold
+  - name: Rematch
+    ring: Evaluate
     isNew: true
-  - name: Nancy
-    ring: Hold
+    description: <a href="https://github.com/rematch/rematch" target="blank" >Rematch</a> is Redux best practices without the boilerplate. 
+  - name: Semantic UI React
+    ring: Evaluate
     isNew: true
-  - name: NPM
-    ring: Hold
-    isNew: true
-  - name: Gulp
-    ring: Hold
-  - name: jQuery
-    ring: Hold
-  - name: Webpack
+    description: <a href="https://react.semantic-ui.com/" target="blank" >Semantic UI React</a> is a UI library.<br><br>
+      It provides us with a collection of trusted re-usable components, saving us time re-inventing the wheel and helping to ensure consistency in the look and feel of our application.
+  - name: Parcel
     ring: Adopt
+    isNew: true
+    description: <a href="https://parceljs.org/" target="blank" >Parcel JS</a> is a blazing fast, zero configuration web application bundler.<br><br>
+      Webpack is notorious for being difficult to work with and requires a lot of setup, this should help alleviate  that.
+  - name: React Testing Library
+    ring: Adopt
+    isNew: true
+    description: <a href="https://github.com/kentcdodds/react-testing-library" target="blank" >react-testing-library</a> is a library that encourages better testing practices.<br>
+      It aims to get you to test code in the way a user would use it, thereby increasing confidence and maintainability.<br><br>
+      This will be added as another tool we can use when writing our tests.<br><br>
+      We may eventually enforce some testing best practices rules like - no shallow rendering, no large snapshots etc..
+  - name: Atomic Design
+    ring: Continue
+    description: Our application structure will continue to follow the <a href="http://bradfrost.com/blog/post/atomic-web-design/" target="blank" >Atomic Design</a> methodology.
+  - name: Jest, Enzyme, Storybook
+    ring: Continue
+    description: These will continue to be used for automated testing.
   - name: React
-    ring: Adopt
+    ring: Continue
+    description: <a href="https://reactjs.org/" target="blank" >React</a> will continue to be used as a lightweight view library.
+  - name: Redux
+    ring: Continue
+    description: <a href="https://redux.js.org/introduction" target="blank" >Redux</a> will continue to be used for state management.
+  - name: Styled Components
+    ring: Continue
+    description: CSS-in-JS is the latest evolution in CSS. 
+      For this we will continue to the <a href="https://www.styled-components.com/" target="blank" >styled-components</a> library.
+  - name: TypeScript
+    ring: Continue
+    description: <a href="https://www.typescriptlang.org/" target="blank" >TypeScript</a> is the defacto for static type checking. 
+      It has has the biggest community, more type definitions, more IDE integration's etc..
   - name: Yarn
-    ring: Adopt
+    ring: Continue
+    description: <a href="https://yarnpkg.com/lang/en/" target="blank" >Yarn</a> will continue to be used for dependency management. 
+  - name: Lerna
+    ring: Remove
+    description: Having a monorepo (managed by <a href="https://lernajs.io/" target="blank" >Lerna</a>) is adding unnecessary complexity. The repo will be converted to a single package with exports.
   - name: Flow
-    ring: Adopt
-  - name: Jest
-    ring: Adopt
-    isNew: true
-  - name: Enzyme
-    ring: Adopt
-    isNew: true
+    ring: Remove
+    description: <a href="https://www.typescriptlang.org/" target="blank" >TypeScript</a> has been chosen in favour of <a href="https://flow.org/" target="blank" >Flow</a>. 
+      See TypeScript section for why.
+  - name: Razor Pages, C#
+    ring: Remove
+    description: We aim to migrate the whole Front End to this UI Stack, removing the legacy server side rendered Razor Pages.
+  - name: Webpack
+    ring: Remove
+    description: See Parcel adoption for why.
 - id: golang
   color: first
   name: Go Stack
