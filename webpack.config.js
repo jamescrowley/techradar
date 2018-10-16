@@ -3,14 +3,13 @@
 const webpack = require('webpack');
 const path = require('path');
 const buildPath = path.join(__dirname, './dist');
-const args = require('yargs').argv;
 
 const CnameWebpackPlugin = require('cname-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-let isProd = args.prod;
-let isDev = args.dev;
+let isProd = process.env.NODE_ENV === 'prod';
+let isDev = process.env.NODE_ENV === 'dev';
 
 let entry = ['./src/site.js'];
 let devtool;
@@ -41,8 +40,7 @@ if (isProd) {
                 warnings: false
             },
             mangle: true
-        }),
-        new webpack.optimize.OccurenceOrderPlugin()
+        })
     );
 }
 
