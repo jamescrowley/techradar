@@ -203,6 +203,7 @@ quadrants:
     description: <a href="https://yarnpkg.com/lang/en/" target="blank" >Yarn</a> will continue to be used for dependency management. 
   - name: Lerna
     ring: Remove
+    isNew: true
     description: Having a monorepo (managed by <a href="https://lernajs.io/" target="blank" >Lerna</a>) is adding unnecessary complexity. The repo will be converted to a single package with exports.
   - name: Flow
     ring: Remove
@@ -210,9 +211,11 @@ quadrants:
       See TypeScript section for why.
   - name: Razor Pages, C#
     ring: Remove
+    isNew: true
     description: We aim to migrate the whole Front End to this UI Stack, removing the legacy server side rendered Razor Pages.
   - name: Webpack
     ring: Remove
+    isNew: true
     description: See Parcel adoption for why.
 - id: golang
   color: first
