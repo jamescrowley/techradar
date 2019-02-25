@@ -2,7 +2,7 @@ A library that generates an interactive radar, inspired by [thoughtworks.com/rad
 
 ## Demo
 
-This repo is published to techradar.fundapps.io, from the /docs folder in the repository. 
+This repo is published to [techradar.fundapps.io](https://techradar.fundapps.io), from the /docs folder in the repository. 
 
 ## To run locally
 
